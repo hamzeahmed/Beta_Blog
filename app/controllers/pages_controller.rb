@@ -39,10 +39,24 @@ class PagesController < ApplicationController
   end
   
   def show
+    
     @page =  Page.find(params[:id])
+    
   end
+  
+  def destroy
+    
+   @page =  Page.find(params[:id])
+   @page.destroy
+   flash[:notice] = "Article Wass Successfully Deleted"
+   redirect_to pages_path
+   
+  end
+  
   private 
   def page_params
     params.require(:page).permit(:title , :description)
   end
+  
+  
 end

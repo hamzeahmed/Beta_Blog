@@ -14,6 +14,7 @@
     <th><%= page.description%></th>
     <th><%= link_to "show" , page_path(page)%></th>
     <th><%= link_to "edit" , edit_page_path(page)%></th>
+    <th><%= link_to "Delete", page_path(page) ,  method: :delete, data:{confirm:"Are you Sure ?"}%></th>
   </tr>
   <%end%>
 </table>
