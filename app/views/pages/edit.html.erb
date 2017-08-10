@@ -1,4 +1,5 @@
-<h2>Create New Aarticle </h2>
+<h2>Editing Article </h2>
+
 <% if @page.errors.any?%>
 <ul>
   <% @page.errors.full_messages.each do|msg| %>
@@ -20,6 +21,7 @@
   <p>
     <%= f.submit %>
   </p>
+
   <%= link_to "Go To List articles" , pages_path%>
 
 <% end %>

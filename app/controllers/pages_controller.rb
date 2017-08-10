@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
-  def home
-    
-  end
   
-  def about
-    
+  def index
+    @page = Page.all
   end
   
   def new 
@@ -12,6 +9,12 @@ class PagesController < ApplicationController
     @page = Page.new
      
   end
+  def edit
+    
+    @page = Page.find(params[:id])
+    
+  end
+  
   def create
     #render plain: params[:page].inspect
     @page = Page.new(page_params)
@@ -23,6 +26,16 @@ class PagesController < ApplicationController
     end
     #@page.save
     #
+  end
+  
+  def update
+    @page =  Page.find(params[:id])
+    if @page.update(page_params)
+      flash[:notice] = "Article was Sucessfuly updated"
+      redirect_to page_path(@page)
+    else
+      render 'edit'
+    end
   end
   
   def show

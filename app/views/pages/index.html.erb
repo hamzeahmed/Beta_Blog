@@ -1,0 +1,19 @@
+<h3>Waa Index kii </h3>
+<p>
+  <%= link_to "Crate Article" , new_page_path%>
+</p>
+
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Description</th>
+  </tr>
+  <% @page.each do |page|%>
+  <tr>
+    <th><%= page.title%></th>
+    <th><%= page.description%></th>
+    <th><%= link_to "show" , page_path(page)%></th>
+    <th><%= link_to "edit" , edit_page_path(page)%></th>
+  </tr>
+  <%end%>
+</table>
