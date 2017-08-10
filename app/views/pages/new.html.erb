@@ -1,6 +1,13 @@
 <h2>Create New Aarticle </h2>
-
-<%= form_for @pages do |f| %>
+<% if @page.errors.any?%>
+<ul>
+  <% @page.errors.full_messages.each do|msg| %>
+    <li><%= msg %></li>
+  <%end%>
+</ul>
+<%end%>
+  
+<%= form_for @page do |f| %>
   <p>
     <%= f.label :title %></br>
     <%= f.text_field :title%> 
