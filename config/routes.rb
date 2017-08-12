@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   root'pages#home'
-  #get 'about', to: 'pages#about' 
+  get 'about', to: 'pages#about' 
   
   resources :pages
   
