@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     #render plain: params[:page].inspect
     @page = Page.new(page_params)
     if @page.save
-      flash[:notice] = "Article was Sucessfuly Created "
+      flash[:success ] = "Article was Sucessfuly Created "
       redirect_to page_path(@page)
     else
       render 'new'
@@ -40,7 +40,7 @@ class PagesController < ApplicationController
   def update
     
     if @page.update(page_params)
-      flash[:notice] = "Article was Sucessfuly updated"
+      flash[:success] = "Article was Sucessfuly updated"
       redirect_to page_path(@page)
     else
       render 'edit'
@@ -57,7 +57,7 @@ class PagesController < ApplicationController
     
    
    @page.destroy
-   flash[:notice] = "Article Wass Successfully Deleted"
+   flash[:danger] = "Article Wass Successfully Deleted"
    redirect_to pages_path
    
   end
