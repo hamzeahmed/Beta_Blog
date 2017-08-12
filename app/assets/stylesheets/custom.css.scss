@@ -34,16 +34,26 @@ $navbar-default-bg:#1b1423;
   margin-bottom: 30px;
 }
 .page-actions{
-  border-top: 1px  solid #0ee ;
+  border-top: 1px  solid #bbc3ce ;
   padding-top: 5px;
 }
+.page-title{
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.page-body{
+  border-top: 1px solid #bbc3ce ;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  
+} 
 .description{
   margin-top: 0;
 }
 footer{
   margin-top: 45px;
   margin-bottom: 5px;
-  border-top : 2px solid #0ee ;
+  border-top : 2px solid #bbc3ce ;
   text-decoration: none;
   color: #777;
 }
