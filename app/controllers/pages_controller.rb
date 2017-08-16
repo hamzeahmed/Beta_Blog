@@ -27,6 +27,7 @@ class PagesController < ApplicationController
   def create
     #render plain: params[:page].inspect
     @page = Page.new(page_params)
+    @page.user = User.first
     if @page.save
       flash[:success ] = "Article was Sucessfuly Created "
       redirect_to page_path(@page)

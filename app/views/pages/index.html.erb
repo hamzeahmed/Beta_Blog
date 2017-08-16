@@ -8,6 +8,12 @@
         </div>
         <div class="page-body">
            <%=  truncate(page.description , length: 100)%>
+           <div class="article-meta-description">
+             <small> Created By:<%= page.user.user_name if page.user%>,
+                  <%= time_ago_in_words(page.created_at)%> ago,
+                  last Updated at: <%= time_ago_in_words(page.updated_at)%> ago
+             </small>
+           </div>
         </div>
         <div class="page-actions">
             <%= link_to "Edit This Article" ,edit_page_path(page) , class:"btn btn-xs btn-primary"%>
