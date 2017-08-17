@@ -1,0 +1,21 @@
+<div align =center>
+  <% obj.each do |user|%>
+    <ul class="listing">
+      <div class="row">
+        <div class=" well col-xs-4 col-xs-offset-4">
+          <li><%= link_to gravatar_for(user), user_path(user)%></li>
+          <li class ="page-title"><%= link_to user.user_name , user_path(user)%></li>    
+          <li><small><%= pluralize(user.pages.count, "page" )if user.pages%></small></li>
+            <div class="page-actions">
+                <%= link_to "Edit This User" ,edit_user_path(user) , class:"btn btn-xs btn-primary"%>
+                <%= link_to "Delete This User" ,user_path(user) , method:  :delete ,  
+                                                  data:{confrim: "Are You Sure U Want Dlete this Article"},
+                                                  class:"btn btn-xs btn-danger" %>
+            </div>
+        </div>
+      </div>
+    </ul>
+  <%end%>
+</table>
+</div>
+  
