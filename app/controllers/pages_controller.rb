@@ -10,7 +10,8 @@ class PagesController < ApplicationController
   end
   
   def index
-    @page = Page.all
+    @page = Page.paginate(page: params[:page], per_page: 5)
+    
   end
   
   def new 
